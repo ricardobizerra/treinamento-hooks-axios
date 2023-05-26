@@ -1,24 +1,21 @@
 import React from "react";
 import { HomeContainer } from './styles';
-import { LogoCITi } from '../../assets';
 
 
 export const Home: React.FC = () => {
+    let contador = 4;
+
     return (
         <HomeContainer>
-            <img src={LogoCITi} alt="" />
-            <h1>ReactJS Boilerplate</h1>
-            <p>
-                Made with
-                {' '}
-                <strong>&lt; &#x0002F; &gt;</strong>
-                {' '}
-                and
-                {' '}
-                <strong>&hearts;</strong>
-                {' '}
-                by CITi
-            </p>
+            <p>{contador}</p>
+            <button 
+                onClick={() => {
+                    contador += 1;
+                    console.log(contador);
+                }}
+            >
+                Aumentar valor
+            </button>
         </HomeContainer>
     );
 }
