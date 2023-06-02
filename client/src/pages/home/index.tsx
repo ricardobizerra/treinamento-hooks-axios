@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { HomeContainer } from './styles';
 
 
 export const Home: React.FC = () => {
-    let contador = 4;
+    const [contador, setContador] = useState(4);
+    const [booleano, setBooleano] = useState(true);
+    const [texto, setTexto] = useState("opa");
+
+    useEffect(() => {
+        console.log('olá aspirantes!')
+        document.title = texto
+    }, [texto])
 
     return (
         <HomeContainer>
-            <p>{contador}</p>
+            <p>{texto}</p>
             <button 
                 onClick={() => {
-                    contador += 1;
-                    console.log(contador);
+                    setTexto(texto + "oi");
+                    console.log(texto);
                 }}
             >
                 Aumentar valor
